@@ -6,4 +6,13 @@ export default {
       return response.data;
     });
   },
+
+  setVisited(stateName, visited) {
+    let requestData = { visited: visited };
+    return axios
+      .patch("/api/states/" + stateName, requestData)
+      .then((response) => {
+        return response.data;
+      });
+  },
 };

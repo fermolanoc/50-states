@@ -12,4 +12,22 @@ router.get("/states", function (req, res, next) {
     .catch((err) => next(err));
 });
 
+// patch route to update a state - visited or not
+router.patch("/states/:name", function (req, res, next) {
+  // get state name and if checkbox is selected or not
+  let stateName = req.params.name;
+  let stateVisited = req.body.visited;
+
+  // update visited column on database only for the state called
+  States.update({ visited: stateVisited }, { where: { name: stateName } })
+    .then((rowsUpdated) => {
+      let numberOfRowsUpdated = rowsUpdated[0];
+      if (numberOfRowsUpdated == 1) {
+        return res.send("Ok");
+      }
+      return res.status(404).send("State not found");
+    })
+    .catch((err) => next(err));
+});
+
 module.exports = router;
