@@ -49,7 +49,7 @@ export default {
                 } else {
                     // 500 server error
                     alert('Sorry, error fetching data about this state')
-                    console.log(err); // for developer
+                    console.log(err); // message for developer
                 }
 
             })
@@ -58,6 +58,7 @@ export default {
             this.mapReady = true
         },
         setMapView() {
+            // render map on screen only when map and data are available from API and ready to be read
             if (this.mapReady && this.dataReady) {
                 this.$refs.map.leafletObject.setView(this.mapCenter, this.zoom)
             }

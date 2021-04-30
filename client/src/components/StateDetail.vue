@@ -30,6 +30,7 @@ export default {
         }
     },
     methods: {
+        // when checkbox is selected/unselected, send message with state name and value of checkbox to parent to handle update
         updateVisited() {
             this.$emit('update-visited', this.state.name, this.visited)
         }
