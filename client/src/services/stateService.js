@@ -15,4 +15,10 @@ export default {
         return response.data;
       });
   },
+
+  getOneState(stateName) {
+    return axios.get("/api/state/" + stateName).then((response) => {
+      return response.data;
+    });
+  },
 };
