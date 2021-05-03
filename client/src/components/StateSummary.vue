@@ -5,7 +5,7 @@
       of Columbia)
     </p>
     <p>You have visited {{ totalVisited }} {{ unit }} states</p>
-    <p id="all-visited=message" v-if="areAllVisited">
+    <p id="all-visited-message" v-if="areAllVisited">
       You have visited all the states and the District of Columbia
     </p>
   </div>
