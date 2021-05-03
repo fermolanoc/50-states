@@ -4,6 +4,7 @@ let path = require("path");
 
 let app = express();
 
+// configure path of files to be distributed
 let VueAppPath = path.join(__dirname, "client", "dist");
 app.use(express.static(VueAppPath));
 
