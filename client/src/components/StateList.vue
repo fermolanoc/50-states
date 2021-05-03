@@ -28,10 +28,17 @@ export default {
           this.$stateService.getAllStates().then( states => {
               this.states = states
           })
+          .catch( err => {
+              alert("Sorry, can't fetch state list")
+          })
       },
       updateVisited(stateName, visited) {
           this.$stateService.setVisited(stateName, visited).then(() => {
               this.fetchAllStates()
+          })
+          .catch( err => {
+              alert("Sorry, can't update state")
+              console.log(err);
           })
       }
   }
