@@ -2,6 +2,8 @@ import { createRouter, createWebHashHistory } from "vue-router";
 import StateList from "@/components/StateList";
 import AboutSite from "@/components/AboutSite";
 import StateMap from "@/components/StateMap";
+import PageNotFound from "@/components/PageNotFound";
+import VisitedStatesList from "@/components/VisitedStatesList";
 
 export default createRouter({
   history: createWebHashHistory(),
@@ -12,6 +14,11 @@ export default createRouter({
       component: StateList,
     },
     {
+      path: "/visited-states",
+      name: "VisitedStatesList",
+      component: VisitedStatesList,
+    },
+    {
       path: "/about",
       name: "AboutSite",
       component: AboutSite,
@@ -20,6 +27,11 @@ export default createRouter({
       path: "/map/:state",
       name: "StateMap",
       component: StateMap,
+    },
+    {
+      path: "/:catchAll(.*)",
+      name: "PageNotFound",
+      component: PageNotFound,
     },
   ],
 });

@@ -8,6 +8,12 @@ export default {
     });
   },
 
+  getAllVisitedStates() {
+    return axios.get("/api/visited-states").then((response) => {
+      return response.data;
+    });
+  },
+
   // update 'visited' column value on database when a state checkbox is selected/unselected for an individual state
   setVisited(stateName, visited) {
     let requestData = { visited: visited };

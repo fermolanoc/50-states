@@ -1,5 +1,6 @@
 let express = require("express");
 let States = require("../models").States;
+let VisitedStates = require("../models").States;
 
 let router = express.Router();
 
@@ -10,6 +11,15 @@ router.get("/states", function (req, res, next) {
       return res.json(states);
     })
     .catch((err) => next(err));
+});
+
+// get all visited states
+router.get("/visited-states", function (req, res, next) {
+  VisitedStates.findAll({ order: ["name"], where: { visited: true } }).then(
+    (visitedStates) => {
+      return res.json(visitedStates);
+    }
+  );
 });
 
 // get all info about one state
