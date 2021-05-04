@@ -1,6 +1,9 @@
 <template>
   <div>
     <h2>Here are the {{ visitedStates.length }} states you have visited</h2>
+    <h4>
+      If you have NOT visited one of these please uncheck it to update the list
+    </h4>
     <div class="state-list-container">
       <div
         class="state-container"

@@ -6,7 +6,7 @@
         >About this site</router-link
       >
       <router-link v-bind:to="{ name: 'VisitedStatesList' }"
-        >Visited States</router-link
+        >All Visited States</router-link
       >
     </div>
 

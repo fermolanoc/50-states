@@ -15,11 +15,11 @@ router.get("/states", function (req, res, next) {
 
 // get all visited states
 router.get("/visited-states", function (req, res, next) {
-  VisitedStates.findAll({ order: ["name"], where: { visited: true } }).then(
-    (visitedStates) => {
+  VisitedStates.findAll({ order: ["name"], where: { visited: true } })
+    .then((visitedStates) => {
       return res.json(visitedStates);
-    }
-  );
+    })
+    .catch((err) => next(err));
 });
 
 // get all info about one state
