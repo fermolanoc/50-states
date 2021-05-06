@@ -4,7 +4,7 @@
       There are a total of {{ states.length }} states (including the Disctrict
       of Columbia)
     </p>
-    <p>You have visited {{ totalVisited }} {{ unit }} states</p>
+    <p>You have visited {{ totalVisited }} {{ unit }}</p>
     <p id="all-visited-message" v-if="areAllVisited">
       You have visited all the states and the District of Columbia
     </p>

@@ -29,7 +29,7 @@ export default createRouter({
       component: StateMap,
     },
     {
-      path: "/:catchAll(.*)",
+      path: "/:pathMatch(.*)*",
       name: "PageNotFound",
       component: PageNotFound,
     },

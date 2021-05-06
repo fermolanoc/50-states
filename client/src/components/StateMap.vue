@@ -56,7 +56,8 @@ export default {
         .catch((err) => {
           // 404 not found
           if (err.response && err.response.status === 404) {
-            this.state.name = "?"; // todo think about a better way to communicate to the user
+            // if 404 response, redirect user to Page not Found
+            this.$router.push({ name: "PageNotFound" });
           } else {
             // 500 server error
             alert("Sorry, error fetching data about this state");
